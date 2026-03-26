@@ -1,0 +1,14 @@
+{
+<<<<<<< HEAD
+  "files.exclude": {
+    "package.json": true,
+    "package-lock.json": true,
+    ".prettierrc": true,
+    ".husky": true,
+    "node_modules": true,
+    ".gitignore": true
+  }
+=======
+    "liveServer.settings.port": 5502
+>>>>>>> 6831e9683640966c8451c383652e5cf57122f230
+}
