@@ -62,255 +62,256 @@
       };
     </script>
   </head>
-  <body class="bg-[#ffffff] font-gilroy overflow-x-hidden">
-    <!-- Hero & Header Wrapper -->
-    <div
-      class="relative min-h-[130vh] bg-[url('assets/images/hero-bg.png')] bg-no-repeat bg-cover bg-bottom"
-    >
-      <!-- Header Section -->
-      <header
-        id="header"
-        class="w-full absolute top-0 left-0 z-50 transition-all duration-300"
+ 
+
+    <body class="bg-[#ffffff] font-gilroy overflow-x-hidden">
+      <!-- Hero & Header Wrapper -->
+      <div
+        class="relative min-h-[130vh] bg-[url('assets/images/hero-bg.png')] bg-no-repeat bg-cover bg-bottom"
       >
-        <nav
-          class="container mx-auto flex items-center justify-between py-10 px-6 lg:px-0 transition-all duration-300"
+        <!-- Header Section -->
+        <header
+          id="header"
+          class="w-full absolute top-0 left-0 z-50 transition-all duration-300"
         >
-          <!-- Logo -->
+          <nav
+            class="container mx-auto flex items-center justify-between py-10 px-6 lg:px-0 transition-all duration-300"
+          >
+            <!-- Logo -->
+            <div
+              class="text-3xl font-bold text-white tracking-wide cursor-pointer"
+            >
+              Panto
+            </div>
+  
+            <!-- Navigation Links -->
+            <ul
+              class="hidden md:flex items-center space-x-12 lg:space-x-20 text-lg text-white font-medium"
+            >
+              <li
+                class="flex items-center gap-2 cursor-pointer hover:text-white/80 transition-colors"
+              >
+                Furniture
+                <span class="text-xs pt-1">⌵</span>
+              </li>
+              <li
+                class="cursor-pointer hover:text-white/80 transition-colors tracking-wide"
+              >
+                Shop
+              </li>
+              <li
+                class="cursor-pointer hover:text-white/80 transition-colors tracking-wide"
+              >
+                About Us
+              </li>
+              <li
+                class="cursor-pointer hover:text-white/80 transition-colors tracking-wide"
+              >
+                Contact
+              </li>
+            </ul>
+  
+            <!-- Cart Icon -->
+            <div onclick="goToCart()" class="relative cursor-pointer">
+              <img src="assets/icons/bag.png" alt="Cart" class="w-8 h-8" />
+              <span id="cart-count"
+                class="absolute -top-1 -right-1.5 bg-[#E58411] text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold"
+                >0</span
+              >
+            </div>
+          </nav>
+        </header>
+  
+        <!-- Hero Content -->
+        <main
+          class="relative z-10 flex flex-col items-center justify-start pb-32 lg:pb-0 lg:min-h-[850px] pt-20 md:pt-40 lg:pt-52 px-4 text-center"
+        >
+          <h1
+            class="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6 max-w-5xl"
+          >
+            Make Your Interior More <br class="hidden md:block" />
+            Minimalistic & Modern
+          </h1>
+          <p
+            class="text-sm md:text-md lg:text-lg text-white/80 mb-8 md:mb-12 max-w-2xl mx-auto leading-[2.5] font-light"
+          >
+            Turn your room with panto into a lot more minimalist
+            <br class="hidden md:block" />
+            and modern with ease and speed
+          </p>
+  
+          <!-- Search Bar -->
+          <div class="relative w-full max-w-xs md:max-w-sm mx-auto">
+            <input
+              type="text"
+              placeholder="Search furniture"
+              class="w-full bg-white/20 backdrop-blur-2xl border border-white/20 rounded-full py-4 px-6 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-[#E58411]/50 transition-all text-sm shadow-2xl"
+            />
+            <button
+              class="absolute right-1.5 top-1/2 -translate-y-1/2 bg-[#E58411] p-2 rounded-full hover:scale-110 transition-transform shadow-lg flex items-center justify-center"
+            >
+              <img
+                src="assets/images/the-search-bar.png"
+                alt="Search"
+                class="w-6 h-6"
+              />
+            </button>
+          </div>
+  
+          <!-- Floating UI Elements -->
+  
+          <!-- Tooltip Widget -->
           <div
-            class="text-3xl font-bold text-white tracking-wide cursor-pointer"
+            class="hidden md:flex absolute top-[52%] left-[18%] z-20 bg-white/10 backdrop-blur-md p-2 rounded-full gap-3 border border-white/20 shadow-2xl scale-125"
           >
-            Panto
+            <div
+              class="w-6 h-6 rounded-full bg-[#E58411] flex items-center justify-center cursor-pointer shadow-inner"
+            >
+              <span class="text-white text-[10px]">✓</span>
+            </div>
+            <div
+              class="w-6 h-6 rounded-full bg-[#2EC5CE] cursor-pointer hover:scale-110 transition-transform border border-white/10"
+            ></div>
+            <div
+              class="w-6 h-6 rounded-full bg-[#7C7C7C] cursor-pointer hover:scale-110 transition-transform border border-white/10"
+            ></div>
           </div>
-
-          <!-- Navigation Links -->
-          <ul
-            class="hidden md:flex items-center space-x-12 lg:space-x-20 text-lg text-white font-medium"
+  
+          <!-- Interaction Dots -->
+          <!-- Dot on Sofa Back -->
+          <div
+            class="hidden md:block absolute top-[63%] left-[21%] z-20 cursor-pointer group"
           >
-            <li
-              class="flex items-center gap-2 cursor-pointer hover:text-white/80 transition-colors"
-            >
-              Furniture
-              <span class="text-xs pt-1">⌵</span>
-            </li>
-            <li
-              class="cursor-pointer hover:text-white/80 transition-colors tracking-wide"
-            >
-              Shop
-            </li>
-            <li
-              class="cursor-pointer hover:text-white/80 transition-colors tracking-wide"
-            >
-              About Us
-            </li>
-            <li
-              class="cursor-pointer hover:text-white/80 transition-colors tracking-wide"
-            >
-              Contact
-            </li>
-          </ul>
-
-          <!-- Cart Icon -->
-          <div class="relative cursor-pointer">
-            <img src="assets/icons/bag.png" alt="Cart" class="w-8 h-8" />
-            <span
-              class="absolute -top-1 -right-1.5 bg-[#E58411] text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold"
-              >0</span
-            >
+            <div class="w-10 h-10 flex items-center justify-center relative">
+              <div
+                class="absolute inset-0 bg-white/10 rounded-full animate-ping opacity-50"
+              ></div>
+              <img
+                src="assets/images/the-left-sided-dots.png"
+                alt="Info Dot"
+                class="w-full h-full relative z-10 group-hover:scale-110 transition-transform"
+              />
+            </div>
           </div>
-        </nav>
-      </header>
-
-      <!-- Hero Content -->
-      <main
-        class="relative z-10 flex flex-col items-center justify-start pb-32 lg:pb-0 lg:min-h-[850px] pt-20 md:pt-40 lg:pt-52 px-4 text-center"
-      >
-        <h1
-          class="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6 max-w-5xl"
-        >
-          Make Your Interior More <br class="hidden md:block" />
-          Minimalistic & Modern
-        </h1>
-        <p
-          class="text-sm md:text-md lg:text-lg text-white/80 mb-8 md:mb-12 max-w-2xl mx-auto leading-[2.5] font-light"
-        >
-          Turn your room with panto into a lot more minimalist
-          <br class="hidden md:block" />
-          and modern with ease and speed
-        </p>
-
-        <!-- Search Bar -->
-        <div class="relative w-full max-w-xs md:max-w-sm mx-auto">
-          <input
-            type="text"
-            placeholder="Search furniture"
-            class="w-full bg-white/20 backdrop-blur-2xl border border-white/20 rounded-full py-4 px-6 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-[#E58411]/50 transition-all text-sm shadow-2xl"
-          />
-          <button
-            class="absolute right-1.5 top-1/2 -translate-y-1/2 bg-[#E58411] p-2 rounded-full hover:scale-110 transition-transform shadow-lg flex items-center justify-center"
+  
+          <!-- Dot on Sofa Seat -->
+          <div
+            class="hidden md:block absolute top-[67%] left-[34%] z-20 cursor-pointer group"
           >
             <img
-              src="assets/images/the-search-bar.png"
-              alt="Search"
-              class="w-6 h-6"
+              src="assets/images/the-spreaded-dots.png"
+              alt="Info Dot"
+              class="w-8 h-8 group-hover:scale-110 transition-transform opacity-95"
             />
-          </button>
-        </div>
-
-        <!-- Floating UI Elements -->
-
-        <!-- Tooltip Widget -->
-        <div
-          class="hidden md:flex absolute top-[52%] left-[18%] z-20 bg-white/10 backdrop-blur-md p-2 rounded-full gap-3 border border-white/20 shadow-2xl scale-125"
-        >
-          <div
-            class="w-6 h-6 rounded-full bg-[#E58411] flex items-center justify-center cursor-pointer shadow-inner"
-          >
-            <span class="text-white text-[10px]">✓</span>
           </div>
+  
+          <!-- Dot on Lamp/Far Left -->
           <div
-            class="w-6 h-6 rounded-full bg-[#2EC5CE] cursor-pointer hover:scale-110 transition-transform border border-white/10"
-          ></div>
-          <div
-            class="w-6 h-6 rounded-full bg-[#7C7C7C] cursor-pointer hover:scale-110 transition-transform border border-white/10"
-          ></div>
-        </div>
-
-        <!-- Interaction Dots -->
-        <!-- Dot on Sofa Back -->
-        <div
-          class="hidden md:block absolute top-[63%] left-[21%] z-20 cursor-pointer group"
-        >
-          <div class="w-10 h-10 flex items-center justify-center relative">
-            <div
-              class="absolute inset-0 bg-white/10 rounded-full animate-ping opacity-50"
-            ></div>
+            class="hidden md:block absolute top-[75%] left-[8%] z-20 cursor-pointer group"
+          >
             <img
               src="assets/images/the-left-sided-dots.png"
               alt="Info Dot"
-              class="w-full h-full relative z-10 group-hover:scale-110 transition-transform"
+              class="w-8 h-8 group-hover:scale-110 transition-transform opacity-95 text-white"
             />
           </div>
-        </div>
-
-        <!-- Dot on Sofa Seat -->
-        <div
-          class="hidden md:block absolute top-[67%] left-[34%] z-20 cursor-pointer group"
-        >
-          <img
-            src="assets/images/the-spreaded-dots.png"
-            alt="Info Dot"
-            class="w-8 h-8 group-hover:scale-110 transition-transform opacity-95"
-          />
-        </div>
-
-        <!-- Dot on Lamp/Far Left -->
-        <div
-          class="hidden md:block absolute top-[75%] left-[8%] z-20 cursor-pointer group"
-        >
-          <img
-            src="assets/images/the-left-sided-dots.png"
-            alt="Info Dot"
-            class="w-8 h-8 group-hover:scale-110 transition-transform opacity-95 text-white"
-          />
-        </div>
-
-        <!-- Dot on Far Right -->
-        <div
-          class="hidden md:block absolute top-[76%] right-[5%] z-20 cursor-pointer group"
-        >
-          <img
-            src="assets/images/the-spreaded-dots.png"
-            alt="Info Dot"
-            class="w-8 h-8 group-hover:scale-110 transition-transform opacity-95"
-          />
-        </div>
-      </main>
-    </div>
-
-    <!-- why choosing us -->
-    <section class="bg-white py-24">
-      <div class="container mx-auto px-6 lg:px-0">
-        <div
-          class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-14"
-        >
-          <!-- Left Title -->
-          <div class="lg:w-[280px]">
-            <h2 class="text-[40px] leading-[1.1] font-bold text-[#1E1E1E]">
-              Why<br />
-              Choosing Us
-            </h2>
+  
+          <!-- Dot on Far Right -->
+          <div
+            class="hidden md:block absolute top-[76%] right-[5%] z-20 cursor-pointer group"
+          >
+            <img
+              src="assets/images/the-spreaded-dots.png"
+              alt="Info Dot"
+              class="w-8 h-8 group-hover:scale-110 transition-transform opacity-95"
+            />
           </div>
-
-          <!-- Right Columns -->
-          <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-14 lg:gap-20">
-            <!-- Col 1 -->
-            <div class="max-w-[330px]">
-              <h3 class="text-[20px] font-bold text-[#1E1E1E] mb-5">
-                Luxury facilities
-              </h3>
-              <p class="text-[14px] leading-[2.0] text-[#7A7A7A] mb-8">
-                The advantage of hiring a workspace with us is that gives you
-                comfortable service and all-around facilities.
-              </p>
-
-              <a
-                href="#"
-                class="inline-flex items-center gap-5 text-[#E58411] text-[14px] font-medium"
-              >
-                <span>More Info</span>
-                <span class="inline-flex items-center">
-                  <span class="w-9 h-[1.5px] bg-[#E58411]"></span>
-                </span>
-              </a>
-            </div>
-
-            <!-- Col 2 -->
-            <div class="max-w-[330px]">
-              <h3 class="text-[20px] font-bold text-[#1E1E1E] mb-5">
-                Affordable Price
-              </h3>
-              <p class="text-[14px] leading-[2.0] text-[#7A7A7A] mb-8">
-                You can get a workspace of the highest quality at an affordable
-                price and still enjoy the facilities that are oly here.
-              </p>
-
-              <a
-                href="#"
-                class="inline-flex items-center gap-5 text-[#E58411] text-[14px] font-medium"
-              >
-                <span>More Info</span>
-                <span class="inline-flex items-center">
-                  <span class="w-9 h-[1.5px] bg-[#E58411]"></span>
-                  <span class="ml-2 text-[16px] leading-none">→</span>
-                </span>
-              </a>
-            </div>
-
-            <!-- Col 3 -->
-            <div class="max-w-[330px]">
-              <h3 class="text-[20px] font-bold text-[#1E1E1E] mb-5">
-                Many Choices
-              </h3>
-              <p class="text-[14px] leading-[2.0] text-[#7A7A7A] mb-8">
-                We provide many unique work space choices so that you can choose
-                the workspace to your liking.
-              </p>
-
-              <a
-                href="#"
-                class="inline-flex items-center gap-5 text-[#E58411] text-[14px] font-medium"
-              >
-                <span>More Info</span>
-                <span class="inline-flex items-center">
-                  <span class="w-9 h-[1.5px] bg-[#E58411]"></span>
-                  <span class="ml-2 text-[16px] leading-none">→</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
+        </main>
       </div>
-    </section>
+  
+      <!-- why choosing us -->
+      <section class="bg-white py-24">
+        <div class="container mx-auto px-6 lg:px-0">
+          <div
+            class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-14"
+          >
+            <!-- Left Title -->
+            <div class="lg:w-[280px]">
+              <h2 class="text-[40px] leading-[1.1] font-bold text-[#1E1E1E]">
+                Why<br />
+                Choosing Us
+              </h2>
+            </div>
+  
+            <!-- Right Columns -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-14 lg:gap-20">
+              <!-- Col 1 -->
+              <div class="max-w-[330px]">
+                <h3 class="text-[20px] font-bold text-[#1E1E1E] mb-5">
+                  Luxury facilities
+                </h3>
+                <p class="text-[14px] leading-[2.0] text-[#7A7A7A] mb-8">
+                  The advantage of hiring a workspace with us is that gives you
+                  comfortable service and all-around facilities.
+                </p>
+  
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-5 text-[#E58411] text-[14px] font-medium"
+                >
+                  <span>More Info</span>
+                  <span class="inline-flex items-center">
+                    <span class="w-9 h-[1.5px] bg-[#E58411]"></span>
+                  </span>
+                </a>
+              </div>
+  
+              <!-- Col 2 -->
+              <div class="max-w-[330px]">
+                <h3 class="text-[20px] font-bold text-[#1E1E1E] mb-5">
+                  Affordable Price
+                </h3>
+                <p class="text-[14px] leading-[2.0] text-[#7A7A7A] mb-8">
+                  You can get a workspace of the highest quality at an affordable
+                  price and still enjoy the facilities that are oly here.
+                </p>
+  
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-5 text-[#E58411] text-[14px] font-medium"
+                >
+                  <span>More Info</span>
+                  <span class="inline-flex items-center">
+                    <span class="w-9 h-[1.5px] bg-[#E58411]"></span>
+                    <span class="ml-2 text-[16px] leading-none">→</span>
+                  </span>
+                </a>
+              </div>
+  
+              <!-- Col 3 -->
+              <div class="max-w-[330px]">
+                <h3 class="text-[20px] font-bold text-[#1E1E1E] mb-5">
+                  Many Choices
+                </h3>
+                <p class="text-[14px] leading-[2.0] text-[#7A7A7A] mb-8">
+                  We provide many unique work space choices so that you can choose
+                  the workspace to your liking.
+                </p>
+  
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-5 text-[#E58411] text-[14px] font-medium"
+                >
+                  <span>More Info</span>
+                  <span class="inline-flex items-center">
+                    <span class="w-9 h-[1.5px] bg-[#E58411]"></span>
+                    <span class="ml-2 text-[16px] leading-none">→</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!-- Best Selling Products Section -->
     <section class="bg-[#F7F7F7] py-20">
@@ -414,12 +415,16 @@
                     <span class="text-[16px] ml-1">392</span>
                   </div>
 
+               
+
                   <button
-                    aria-label="Add to cart"
-                    class="w-11 h-11 rounded-full bg-[#0D1B39] text-white flex items-center justify-center text-[22px] leading-none"
-                  >
-                    +
-                  </button>
+                  aria-label="Add to cart"
+                  data-name="Sakarias Armchair"
+                  data-price="392"
+                  class="add-to-cart w-11 h-11 rounded-full bg-[#0D1B39] text-white flex items-center justify-center text-[22px]"
+                >
+                  +
+                </button>
                 </div>
               </div>
             </div>
@@ -460,12 +465,15 @@
                     <span class="text-[16px] ml-1">299</span>
                   </div>
 
+
                   <button
-                    aria-label="Add to cart"
-                    class="w-11 h-11 rounded-full bg-[#0D1B39] text-white flex items-center justify-center text-[22px] leading-none"
-                  >
-                    +
-                  </button>
+                  aria-label="Add to cart"
+                  data-name="Sakarias Armchair"
+                  data-price="392"
+                  class="add-to-cart w-11 h-11 rounded-full bg-[#0D1B39] text-white flex items-center justify-center text-[22px]"
+                >
+                  +
+                </button>
                 </div>
               </div>
             </div>
@@ -506,12 +514,16 @@
                     <span class="text-[16px] ml-1">519</span>
                   </div>
 
+               
+
                   <button
-                    aria-label="Add to cart"
-                    class="w-11 h-11 rounded-full bg-[#0D1B39] text-white flex items-center justify-center text-[22px] leading-none"
-                  >
-                    +
-                  </button>
+                  aria-label="Add to cart"
+                  data-name="Sakarias Armchair"
+                  data-price="392"
+                  class="add-to-cart w-11 h-11 rounded-full bg-[#0D1B39] text-white flex items-center justify-center text-[22px]"
+                >
+                  +
+                </button>
                 </div>
               </div>
             </div>
@@ -552,12 +564,16 @@
                     <span class="text-[16px] ml-1">921</span>
                   </div>
 
+                
+
                   <button
-                    aria-label="Add to cart"
-                    class="w-11 h-11 rounded-full bg-[#0D1B39] text-white flex items-center justify-center text-[22px] leading-none"
-                  >
-                    +
-                  </button>
+  aria-label="Add to cart"
+  data-name="Sakarias Armchair"
+  data-price="392"
+  class="add-to-cart w-11 h-11 rounded-full bg-[#0D1B39] text-white flex items-center justify-center text-[22px]"
+>
+  +
+</button>
                 </div>
               </div>
             </div>
@@ -1050,33 +1066,69 @@
       </div>
     </footer>
 
-    <script>
-      const header = document.getElementById("header");
-      const nav = header.querySelector("nav");
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          header.classList.add(
-            "fixed",
-            "bg-[#1E1E1E]/90",
-            "backdrop-blur-md",
-            "shadow-lg",
-          );
-          header.classList.remove("absolute");
-          nav.classList.remove("py-10");
-          nav.classList.add("py-5");
-        } else {
-          header.classList.remove(
-            "fixed",
-            "bg-[#1E1E1E]/90",
-            "backdrop-blur-md",
-            "shadow-lg",
-          );
-          header.classList.add("absolute");
-          nav.classList.remove("py-5");
-          nav.classList.add("py-10");
-        }
-      });
-    </script>
+
+
+
+<script>
+  // ================= HEADER SCROLL =================
+  const header = document.getElementById("header");
+  const nav = header.querySelector("nav");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add(
+        "fixed",
+        "bg-[#1E1E1E]/90",
+        "backdrop-blur-md",
+        "shadow-lg"
+      );
+      header.classList.remove("absolute");
+      nav.classList.remove("py-10");
+      nav.classList.add("py-5");
+    } else {
+      header.classList.remove(
+        "fixed",
+        "bg-[#1E1E1E]/90",
+        "backdrop-blur-md",
+        "shadow-lg"
+      );
+      header.classList.add("absolute");
+      nav.classList.remove("py-5");
+      nav.classList.add("py-10");
+    }
+  });
+
+  // ================= CART SYSTEM =================
+  const cartCount = document.getElementById("cart-count");
+  const buttons = document.querySelectorAll(".add-to-cart");
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // show cart count on page load
+  cartCount.textContent = cart.length;
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const product = {
+        name: btn.dataset.name,
+        price: btn.dataset.price,
+      };
+
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      cartCount.textContent = cart.length;
+    });
+  });
+
+  function goToCart() {
+    window.location.href = "cart.html";
+  }
+</script>
+
+
+
+
   </body>
 </html>
