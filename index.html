@@ -72,10 +72,10 @@
         <!-- Header Section -->
         <header
           id="header"
-          class="w-full absolute top-0 left-0 z-50 transition-all duration-300"
+          class="w-full absolute top-0 left-0 z-50 transition-all duration-100" 
         >
           <nav
-            class="container mx-auto flex items-center justify-between py-10 px-6 lg:px-0 transition-all duration-300"
+            class="container mx-auto flex items-center justify-between py-10 px-6 lg:px-0 transition-all duration-200"
           >
             <!-- Logo -->
             <div
@@ -88,16 +88,68 @@
             <ul
               class="hidden md:flex items-center space-x-12 lg:space-x-20 text-lg text-white font-medium"
             >
-              <li
-                class="flex items-center gap-2 cursor-pointer hover:text-white/80 transition-colors"
+            <li
+            class="flex items-center gap-2 cursor-pointer hover:text-white/80 transition-colors"
+          >
+          
+         
+
+
+            <div class="relative">
+              <!-- BUTTON -->
+              <button
+                id="furniture-btn"
+                class="flex items-center gap-2 font-medium"
               >
                 Furniture
-                <span class="text-xs pt-1">⌵</span>
-              </li>
+                <span
+                  id="arrow"
+                  class="inline-block transition-transform duration-300"
+                >
+                  ⌵
+                </span>
+              </button>
+            
+              <!-- DROPDOWN -->
+              <div
+                id="dropdown"
+                class="hidden absolute mt-2 w-40 bg-black shadow-lg rounded hover:text-black hover:bg-gray-200"
+              >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Chairs</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tables</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sofas</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Beds</a>
+              </div>
+            </div>
+
+          </li>
+              
               <li
                 class="cursor-pointer hover:text-white/80 transition-colors tracking-wide"
               >
-                Shop
+              
+
+
+              <div class="relative">
+                <!-- SHOP BUTTON -->
+                <button
+                  id="shop-btn"
+                  class="font-medium"
+                >
+                  Shop
+                </button>
+              
+                <!-- DROPDOWN -->
+                <div
+                  id="shop-dropdown"
+                  class="hidden absolute mt-2 w-44 bg-black shadow-lg rounded z-50"
+                >
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">All Products</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">New Arrivals</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">Best Sellers</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">Discount</a>
+                </div>
+              </div>
               </li>
               <li
                 class="cursor-pointer hover:text-white/80 transition-colors tracking-wide"
@@ -1070,6 +1122,8 @@
 
 
 
+
+
 <script>
   // ================= HEADER SCROLL =================
   const header = document.getElementById("header");
@@ -1104,9 +1158,7 @@
   const buttons = document.querySelectorAll(".add-to-cart");
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // show cart count on page load
-  cartCount.textContent = cart.length;
+  cartCount.textContent = cart.length; // show cart count on page load
 
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -1114,10 +1166,8 @@
         name: btn.dataset.name,
         price: btn.dataset.price,
       };
-
       cart.push(product);
       localStorage.setItem("cart", JSON.stringify(cart));
-
       cartCount.textContent = cart.length;
     });
   });
@@ -1125,10 +1175,47 @@
   function goToCart() {
     window.location.href = "cart.html";
   }
+
+  // ================= DROPDOWNS =================
+  const furnitureBtn = document.getElementById("furniture-btn");
+  const furnitureDropdown = document.getElementById("dropdown");
+  const furnitureArrow = document.getElementById("arrow"); // optional if you have icon
+
+  const shopBtn = document.getElementById("shop-btn");
+  const shopDropdown = document.getElementById("shop-dropdown");
+  const shopArrow = document.getElementById("shop-arrow"); // optional if you have icon
+
+  // FURNITURE CLICK
+  furnitureBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent closing immediately
+
+    shopDropdown.classList.add("hidden"); // close shop if open
+    furnitureDropdown.classList.toggle("hidden"); // toggle furniture
+
+    if (furnitureArrow) furnitureArrow.classList.toggle("rotate-180"); // rotate arrow if you have it
+    if (shopArrow) shopArrow.classList.remove("rotate-180"); // reset shop arrow
+  });
+
+  // SHOP CLICK
+  shopBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    furnitureDropdown.classList.add("hidden"); // close furniture if open
+    shopDropdown.classList.toggle("hidden"); // toggle shop
+
+    if (shopArrow) shopArrow.classList.toggle("rotate-180");
+    if (furnitureArrow) furnitureArrow.classList.remove("rotate-180");
+  });
+
+  // CLICK OUTSIDE TO CLOSE BOTH
+  document.addEventListener("click", () => {
+    furnitureDropdown.classList.add("hidden");
+    shopDropdown.classList.add("hidden");
+
+    if (furnitureArrow) furnitureArrow.classList.remove("rotate-180");
+    if (shopArrow) shopArrow.classList.remove("rotate-180");
+  });
 </script>
-
-
-
 
   </body>
 </html>
