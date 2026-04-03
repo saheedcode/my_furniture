@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome (ONLY ONE, FIXED) -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+
+  <title>Panto Furniture</title>
+
+  <!-- Font -->
+  <style>
+    @font-face {
+      font-family: "Gilroy";
+      src: url("assets/fonts/Gilroy-Regular.woff2") format("woff2");
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            gilroy: ["Gilroy", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-white font-gilroy overflow-x-hidden">
+
+<!-- ✅ MOBILE HEADER -->
+<div class="lg:hidden fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md z-50">
+  <div class="flex justify-between items-center p-4">
+
+    <div class="text-2xl font-bold text-white">Panto</div>
+
+    <div class="flex items-center gap-4">
+      <!-- Cart -->
+      <div onclick="goToCart()" class="relative cursor-pointer">
+        <img src="assets/icons/bag.png" class="w-7 h-7" />
+        <span id="cart-count"
+          class="absolute -top-1 -right-1 bg-[#E58411] text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">
+          0
+        </span>
+      </div>
+
+      <!-- Menu -->
+      <button id="mobileMenuBtn" class="text-white text-2xl">☰</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ✅ MOBILE MENU -->
+<div id="mobileMenu"
+  class="hidden lg:hidden fixed top-[70px] left-0 w-full bg-white shadow-md z-40">
+
+  <ul class="flex flex-col gap-3 p-4 text-gray-800">
+
+    <li>
+      <button onclick="toggleSubMenu('furnitureSub')" class="flex justify-between w-full font-medium">
+        Furniture <span>⌵</span>
+      </button>
+
+      <ul id="furnitureSub" class="hidden pl-4 mt-2 space-y-2 text-sm">
+        <li>Chairs</li>
+        <li>Tables</li>
+        <li>Sofas</li>
+        <li>Beds</li>
+      </ul>
+    </li>
+
+    <li>
+      <button onclick="toggleSubMenu('shoeSub')" class="flex justify-between w-full font-medium">
+        Shoe <span>⌵</span>
+      </button>
+
+      <ul id="shoeSub" class="hidden pl-4 mt-2 space-y-2 text-sm">
+        <li>Men</li>
+        <li>Women</li>
+        <li>Kids</li>
+      </ul>
+    </li>
+
+    <li class="font-medium">About Us</li>
+    <li class="font-medium">Contact</li>
+
+  </ul>
+</div>
+
+<!-- HERO -->
+<div class="bg-black min-h-screen flex items-center justify-center text-white pt-20">
+  <h1 class="text-3xl font-bold text-center">
+    Make Your Interior More Modern
+  </h1>
+</div>
+
+<!-- ✅ JAVASCRIPT (THIS WAS YOUR MAIN BUG) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const btn = document.getElementById("mobileMenuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  // Toggle main menu
+  btn.addEventListener("click", function () {
+    menu.classList.toggle("hidden");
+  });
+
+  // Toggle sub menu
+  window.toggleSubMenu = function(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle("hidden");
+  };
+
+  // Cart function
+  window.goToCart = function () {
+    alert("Cart clicked");
+  };
+
+});
+</script>
+
+</body>
+</html>
